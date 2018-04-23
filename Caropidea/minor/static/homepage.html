@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+    {% load bootstrap3 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<html lang="en">
+<head>
+    <title>Caropidea</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="minor/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<div>
+<nav class="navbar navbar-inverse" >
+        <div class="container">
+          <ul  class="nav navbar-nav">
+            <li><a class='navbar-brand bigbrand align-center' href="{% static '' %}">Caropidea</a></li>
+           </ul>
+        </div>
+</nav>
+
+
+        <div class="containern align">
+            <div class="jumbotron">
+            <a href="{% url 'BusinessUser:index' %}" class="btn btn-light" role="button">Business User</a>
+            <a href="{% url 'NormalUser:index' %}" class="btn btn-dark" role="button">NormalUser</a>
+        </div>
+</div>
+<div class="container">
+    <h3 class="bro">All about the Caropidea</h3>
+     {% block body_block%}
+        {% endblock %}
+</div>
+
+</body>
+</html>
